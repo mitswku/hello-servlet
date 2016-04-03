@@ -1,0 +1,13 @@
+apply plugin: 'war'
+apply plugin: 'jetty'
+
+def defaultEncoding = 'UTF-8'
+[compileJava, compileTestJava]*.options*.encoding = defaultEncoding
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  providedCompile 'javax.servlet:servlet-api:2.5'
+}
